@@ -1,0 +1,183 @@
+root@ip-172-31-16-133:~/Techlanders_ecom/ekart# history
+   #Docker
+    2  # Add Docker's official GPG key:
+    3  sudo apt-get update
+    4  sudo apt-get install ca-certificates curl gnupg
+    5  sudo install -m 0755 -d /etc/apt/keyrings
+    6  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    7  sudo chmod a+r /etc/apt/keyrings/docker.gp
+    8  # Add the repository to Apt sources:
+    9  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+   10    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   11  sudo apt-get update
+   12  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   13  clear
+   14  docker -v
+
+
+
+=============================================================================================
+   #JDK
+   18  sudo apt update
+   19  sudo apt install fontconfig openjdk-17-jre
+   20  java -version
+   21  openjdk version "17.0.8" 2023-07-18
+   22  OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
+   23  OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
+   24  snap install openjdk
+   25  clear
+   26  openjdk -v
+=============================================================================================
+
+   #Jenkins
+   27  sudo wget -O /usr/share/keyrings/jenkins-keyring.asc   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+   28  echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]   https://pkg.jenkins.io/debian-stable binary/ | sudo tee   /etc/apt/sources.list.d/jenkins.list > /dev/null
+   29  sudo apt-get update
+   30  sudo apt-get install jenkins
+   31  jenkins -v
+   32  clear
+   33   sudo systemctl enable jenkins
+   34  sudo systemctl start jenkins
+   35  sudo systemctl status jenkins
+   36  clear
+
+=============================================================================================
+   
+   #Python
+   63  sudo apt update
+   64  sudo apt install python3
+   65  python3 --version
+
+
+
+  =============================================================
+   #Install Python dependencies
+   85  vi requirements.txt
+Add in the file-:
+Flask==3.0.0 Flask-SQLAlchemy==3.1.1 Flask-CORS==4.0.0 psycopg2-binary==2.9.9
+   86  cat requirements.txt
+   87  pip install -r requirements.txt
+   88  clear
+   89  python -m flask --version
+   90  python3 -m flask --version
+
+=================================================================
+   92  sudo apt update
+   93  sudo apt install postgresql postgresql-contrib
+   94  sudo -u postgres psql
+   95  clear
+
+==============================================================
+   96  git clone https://github.com/harnoor-singh1/Techlanders_ecom.git
+   97  ls
+   98  cd Techlanders_ecom
+   99  ls
+  100  cd ekart
+  101  ls
+  102  python3 app.py
+  103  vi app.py
+  104  psql -u postgres
+  105  psql -U postgres
+  106  exit
+  107  clear
+  108  psql
+  109  psql -v
+  110  psql --version
+  111  history
+  112  psql -U postgres -d flask -h localhost -p 5432
+  113  psql -U postgres
+  114  sudo service postgresql restart
+  115  psql -U postgres
+  116  sudo apt-get install libpq-dev
+  117  psql -U postgres
+  118  pip3 install psycopg2
+  119  pip install gunicorn
+  120  gunicorn -b 0.0.0.0:5000 app.app
+  121  psql -U postgres
+  122  psql --version
+  123  sudo nano /etc/postgresql/{version}/main/pg_hba.conf
+  124  psql -u postgres
+  125  psql --help
+  126  clear
+  127  psql
+  128  sudo apt-get remove postgresql-client
+  129  clear
+  130  sudo apt-get purge postgresql postgresql-contrib
+  131  sudo rm -r /etc/postgresql/
+  132  psql --version
+  133  clear
+  134  sudo sytemctl psql restart
+  135  clear
+  136  psql --version
+  137  psql -U postgres
+  138  cd /etc/postgresql
+  139  cd /etc/postgresql/
+  140  sudo nano /etc/postgresql/14/main/pg_hba.conf
+  141  sudo nano /etc/postgresql/14.10/main/pg_hba.conf
+  142  clear
+  143  sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+  144  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+  145  sudo apt-get update
+  146  sudo apt-get -y install postgresql
+  147  sudo apt-get install libpq-dev
+  148  clear
+  149  psql --version
+  150  cd /etc/postgresql
+  151  ls
+  152  psql 
+  153  psql -U postgres
+  154  sudo nano /etc/postgresql/16/main/pg_hba.conf
+  155  sudo service postgresql restart
+  156  psql -U postgres
+  157  psql --version
+  158  ls
+  159  cd ~
+  160  ls
+  161  cd Techlanders_ecom/Ekart
+  162  cd Techlanders_ecom/ekart
+  163  ls
+  164  vi app.py
+  165  clear
+  166  psql
+  167  psql -U postgres
+  168  postgresql
+  169  psql -u postgres
+  170  psql
+  171  clear
+  172  sudo -u postgres psql
+  173  history
+  174  clear
+  175  vi app.py
+  176  python3 app.py
+  177  ls
+  178  vi app.py
+  179  pip install flask_migrate
+  180  python3 app.py
+  181  clear
+  182  pip install gunicorn
+  183  gunicorn -b 0.0.0.0:5000 app.app
+  184  clear
+  185  vi app.py
+  186  gunicorn -b 0.0.0.0:5000 app.app
+  187  vi app.py
+  188  clear
+  189  sudo psql -U postgres
+  190  psql
+  191  clear
+  192  sudo -u postgres psql
+  193  gunicorn -b 0.0.0.0:5000 app.app
+  194  sudo service postgresql restart
+  195  gunicorn -b 0.0.0.0:5000 app.app
+  196  ls
+  197  clear
+  198  python3 app.py
+  199  clear
+  200  gunicorn -b 0.0.0.0:5000 app.app
+  201  clear
+  202  gunicorn -b 0.0.0.0:5000 app.app
+  203  gunicorn -b 0.0.0.0:5000 app
+  204  gunicorn -b 0.0.0.0:5000 app:app
+  205  clear
+  206  sudo -u postgres psql
+  207  clear
+  208  history
