@@ -113,18 +113,17 @@ psycopg2-binary==2.9.9
 #Change Port No.
 #Change Database name
  python3 app.py
-  
-Website will run in local server
+
 ============================================================================================================================================================
 
 
 
 
-#Install Gunicorn
+#Install and run Gunicorn in source code directory
 pip install gunicorn
 gunicorn -b 0.0.0.0:5000 app:app
 
-Website will run with the Public IP
+
 
 ============================================================================================================================================================
 
