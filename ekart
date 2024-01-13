@@ -92,7 +92,7 @@ psycopg2-binary==2.9.9
 
    
 #Create database
- CREATE database flask;
+ CREATE DATABASE flask;
  \list
  \c flask
  \dt
